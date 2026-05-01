@@ -3,7 +3,7 @@ from mcp import ClientSession
 from mcp.client.streamable_http import streamablehttp_client
 from mcp.types import TextContent
 
-SERVER_URL = "http://localhost:8000"
+SERVER_URL = "http://127.0.0.1:8000/mcp"
 
 async def run_cleint():
     print(f"  Connecting to server at {SERVER_URL}...")
@@ -23,7 +23,7 @@ async def run_cleint():
 
             res_result = await session.read_resource(resource_uri)
 
-            for content in res_result.content:
+            for content in res_result.contents:
                 if hasattr(content, "text"):
                     print(f"📜 CONTENT: {content.text}")
             
@@ -70,4 +70,4 @@ async def run_cleint():
                     print(f"📝 MESSAGE CONTENT:\n{message.content}")
                 
 if __name__ == "__main__":
-    asyncio.run(run_client())
+    asyncio.run(run_cleint())

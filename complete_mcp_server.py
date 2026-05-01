@@ -73,4 +73,4 @@ def draft_travel_plan(destination: str, days: int, travelers: int) -> str:
     """
 
 if __name__ == "__main__":
-    mcp.run(transport="streamble-http")
+    mcp.run(transport="streamable-http")
